@@ -12,9 +12,11 @@ set(PROJECT_VERSION
 find_package(OpenGL REQUIRED)
 find_package(GLEW REQUIRED)
 find_package(GLFW REQUIRED)
+find_package(Eigen3 REQUIRED)
 
-include_directories(${GLEW_INCLUDE_DIRS} ${GLFW_INCLUDE_DIRS})
+include_directories(${EIGEN3_INCLUDE_DIRS} ${GLEW_INCLUDE_DIRS} ${GLFW_INCLUDE_DIRS})
 
 add_subdirectory(Box2D)
+add_subdirectory(ab2d)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/Box2D)
 add_subdirectory(sim)
